@@ -24,7 +24,7 @@
 		@brief Allocate memory of specified size
 		@param size [in] Number of bytes of memory to allocate
 		@return Pointer to the allocated memory or NULL on error
-	*/
+*/
 void *memory_alloc(size_t size);
 
 /*
@@ -36,7 +36,7 @@ void *memory_alloc(size_t size);
 		@param ptr [in] Pointer to previously allocated memory
 		@param size [in] Number of bytes the chunk of memory should now be
 		@return Pointer to the resized chunk of memory or NULL on error
-	*/
+*/
 void *memory_realloc(void *ptr, size_t size);
 
 #endif

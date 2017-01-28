@@ -15,7 +15,9 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CONFIGURATION_TYPES Debug)
 
 set(CHIP8_FILES
+	source/file.c
 	source/memory.c
+	source/string.c
 	)
 
 add_library(CHIP8lib ${CHIP8_FILES})
