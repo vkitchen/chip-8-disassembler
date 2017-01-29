@@ -6,6 +6,7 @@ void test_string_append(void)
 	struct string *s = string_new_c("cat");
 	string_append_c(s, "dog");
 	TEST_ASSERT_EQUAL_STRING(s->str, "catdog");
+	TEST_ASSERT_EQUAL_UINT(s->bytes, 6);
 	}
 
 int main(void)
