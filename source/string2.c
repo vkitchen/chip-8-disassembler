@@ -48,7 +48,7 @@ void string_free(struct string *str)
 */
 struct string *string_new()
 	{
-	struct string *s = malloc(sizeof(*s));
+	struct string *s = memory_alloc(sizeof(*s));
 	s->str = NULL;
 	s->bytes = 0;
 	return s;
@@ -60,7 +60,7 @@ struct string *string_new()
 */
 struct string *string_new_c(char *str)
 	{
-	struct string *s = malloc(sizeof(*s));
+	struct string *s = memory_alloc(sizeof(*s));
 	s->str = strdup(str);
 	s->bytes = strlen(str);
 	return s;

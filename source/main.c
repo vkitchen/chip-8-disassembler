@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "disassemble.h"
 #include "file.h"
 #include "string2.h"
 
@@ -30,9 +31,8 @@ int main(int argc, char **argv)
 		exit(1);
 		}
 
-	struct string *s = file_slurp_c(file);
-	printf("\"%s\" %d\n", s->str, s->bytes);
-	string_append_c(s, "dog");
-	printf("\"%s\" %d\n", s->str, s->bytes);
+	struct string *code = file_slurp_c(file);
+	struct string *result = disassemble(code);
+	printf("%s\n", result->str);
 	return 0;
 	}
