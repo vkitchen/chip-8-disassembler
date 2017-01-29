@@ -26,4 +26,14 @@
 */
 struct string *file_slurp_c(char *filename);
 
+/*
+	FILE_EXISTS_C()
+	---------------
+*/
+/*!
+		@brief Checks whether a file exists on the filesystem
+		@param filename [in] Filename to check
+*/
+int file_exists(char *filename);
+
 #endif

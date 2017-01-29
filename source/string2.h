@@ -21,6 +21,17 @@ struct string
 	};
 
 /*
+	STRING_APPEND_C()
+	-------------
+*/
+/*!
+		@brief Appends one string on to another
+		@param dest [in] String that gets add to
+		@param src [in] What is being added on
+*/
+void string_append_c(struct string *dest, char *src);
+
+/*
 	STRING_FREE()
 	-------------
 */
@@ -30,5 +41,16 @@ struct string
 		@return Pointer to the allocated memory or NULL on error
 */
 void string_free(struct string *str);
+
+/*
+	STRING_NEW_C()
+	-------------
+*/
+/*!
+		@brief Creates a new string object from a cstring
+		@param str [in] String to use in creation
+		@return String object
+*/
+struct string *string_new_c(char *str);
 
 #endif

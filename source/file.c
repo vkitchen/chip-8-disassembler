@@ -8,9 +8,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
+#include <unistd.h>
 #include "file.h"
 #include "memory.h"
-#include "string.h"
+#include "string2.h"
 
 /*
 	FILE_SLURP_C()
@@ -42,4 +43,13 @@ struct string *file_slurp_c(char *filename)
 		}
 
 	return result;
+	}
+
+/*
+	FILE_EXISTS_C()
+	---------------
+*/
+int file_exists(char *filename)
+	{
+	return access(filename, F_OK) != -1;
 	}
