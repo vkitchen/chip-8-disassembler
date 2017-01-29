@@ -32,5 +32,7 @@ int main(int argc, char **argv)
 
 	struct string *s = file_slurp_c(file);
 	printf("\"%s\" %d\n", s->str, s->bytes);
+	string_append_c(s, "dog");
+	printf("\"%s\" %d\n", s->str, s->bytes);
 	return 0;
 	}

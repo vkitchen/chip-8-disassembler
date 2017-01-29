@@ -20,6 +20,7 @@ void string_append_c(struct string *dest, char *src)
 	dest->str = memory_realloc(dest->str, sizeof(*dest->str) * (dest->bytes + lenb + 1));
 	while (*src != '\0')
 		dest->str[dest->bytes++] = *src++;
+	dest->str[dest->bytes] = '\0';
 	}
 
 /*
