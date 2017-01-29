@@ -43,6 +43,16 @@ void string_append_c(struct string *dest, char *src);
 void string_free(struct string *str);
 
 /*
+	STRING_NEW()
+	-------------
+*/
+/*!
+		@brief Creates a new empty string object
+		@return An empty string object
+*/
+struct string *string_new();
+
+/*
 	STRING_NEW_C()
 	-------------
 */

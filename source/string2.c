@@ -17,10 +17,18 @@
 void string_append_c(struct string *dest, char *src)
 	{
 	size_t lenb = strlen(src);
-	dest->str = memory_realloc(dest->str, sizeof(*dest->str) * (dest->bytes + lenb + 1));
-	while (*src != '\0')
-		dest->str[dest->bytes++] = *src++;
-	dest->str[dest->bytes] = '\0';
+	if (dest->str == NULL)
+		{
+		dest->str = strdup(src);
+		dest->bytes = lenb;
+		}
+	else
+		{
+		dest->str = memory_realloc(dest->str, sizeof(*dest->str) * (dest->bytes + lenb + 1));
+		while (*src != '\0')
+			dest->str[dest->bytes++] = *src++;
+		dest->str[dest->bytes] = '\0';
+		}
 	}
 
 /*
@@ -32,6 +40,18 @@ void string_free(struct string *str)
 	if (str->str != NULL)
 		free(str->str);
 	free(str);
+	}
+
+/*
+	STRING_NEW()
+	-------------
+*/
+struct string *string_new()
+	{
+	struct string *s = malloc(sizeof(*s));
+	s->str = NULL;
+	s->bytes = 0;
+	return s;
 	}
 
 /*
