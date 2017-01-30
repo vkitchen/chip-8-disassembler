@@ -25,6 +25,6 @@
 	@param bytecode [in] The bytecode to disassemble
 	@return A string of assembly
 */
-struct string *disassemble(struct string *bytecode);
+struct string *disassemble(struct string *code);
 
 #endif
